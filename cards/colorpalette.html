@@ -12,4 +12,27 @@
   <button id="create-palette">Create Palette</button>
 
   <div id="palette-preview"></div>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#create-palette').click(function() {
+        const color1 = $('#color-one').val();
+        const color2 = $('#color-two').val();
+        const color3 = $('#color-three').val();
+        const color4 = $('#color-four').val();
+
+        const paletteHTML = `
+          <div style="display: flex; gap: 10px; margin-top: 20px;">
+            <div style="width: 80px; height: 80px; background-color: ${color1}; border: 1px solid #ccc;"></div>
+            <div style="width: 80px; height: 80px; background-color: ${color2}; border: 1px solid #ccc;"></div>
+            <div style="width: 80px; height: 80px; background-color: ${color3}; border: 1px solid #ccc;"></div>
+            <div style="width: 80px; height: 80px; background-color: ${color4}; border: 1px solid #ccc;"></div>
+          </div>
+        `;
+
+        $('#palette-preview').html(paletteHTML);
+      });
+    });
+  </script>
 </section>
